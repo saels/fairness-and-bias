@@ -77,8 +77,8 @@ Across the projects in this repository, several recurring engineering principles
 
 ## What This Repository Demonstrates
 
-From an engineering perspective, this portfolio shows how I approach fairness as part of the model lifecycle: define the harm, inspect the data-generating process, keep protected attributes available for controlled auditing when appropriate, evaluate subgroup metrics, make threshold trade-offs explicit, document limitations, and connect technical findings to governance decisions.
+From an engineering perspective, this repository shows how I approach fairness as part of the model lifecycle: define the harm, inspect the data-generating process, keep protected attributes available for controlled auditing when appropriate, evaluate subgroup metrics, make threshold trade-offs explicit, document limitations, and connect technical findings to governance decisions.
 
 The notebook contains the hands-on modeling workflow. The case documents provide the surrounding business, legal, and operational context that determines whether a technically reasonable model is actually responsible to deploy.
 
-> **Note:** The legal material in this repository is educational portfolio work and should not be treated as legal advice.
+> **Note:** The legal material in this repository is educational work and should not be treated as legal advice.
