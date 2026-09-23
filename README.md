@@ -11,7 +11,7 @@ The repository is organized around five use cases. Together they show how fairne
 ## Repository Map
 
 | Use case | What it examines | Core takeaway |
-|---|---|---|---|
+|---|---|---|
 | **FairBank lending case** | Fairness in automated small-loan approval, including demographic parity, opportunity parity, thresholds, and governance | A race-blind model can still produce unequal outcomes. Equal overall error rates can hide meaningful differences in who is denied credit incorrectly. |
 | **Repayment model fairness audit** | Logistic regression for repayment prediction, subgroup error analysis, and threshold-based fairness mitigation | Removing a protected attribute from training does not guarantee equal treatment. Fairness must be checked in the model's outcomes, and improving one fairness metric can worsen another. |
 | **Robert Williams case** | A wrongful arrest following a facial-recognition candidate match, poor input quality, and weak human corroboration | Model uncertainty becomes dangerous when it is treated as ground truth. Fairness failures can come from both data imbalance and the decision process around the model. |
