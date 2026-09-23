@@ -18,7 +18,7 @@ The repository is organized around five use cases. Together they show how fairne
 | **Protected attributes and law** | Sensitive and protected information, proxy variables, and differences across Peru, the EU, and the US | Fairness engineering has a legal context. Protected attributes can also be reconstructed indirectly from proxies, so simply removing a field may not remove the risk. |
 | **Representation vs. measurement bias** | The difference between who is represented in a dataset and what the dataset is actually measuring | Representation bias and measurement bias require different fixes. More data does not solve a bad proxy, and a better label does not solve an unrepresentative population. |
 
-## FairBank: Fairness in Automated Lending
+## FairBank Lending Case
 
 The FairBank case asks a deceptively simple question: if a lending model does not use race, can its decisions still be unfair?
 
@@ -28,7 +28,7 @@ The disparity becomes visible when the errors are separated by type. Among appli
 
 The accompanying memorandum moves the discussion from diagnosis to governance. It recommends an independent audit, legal review before changing decision thresholds, investigation of alternative credit signals and proxy variables, a manual-review path for borderline decisions, outreach to underserved applicant pools, and recurring fairness monitoring.
 
-## Repayment Model Fairness audit
+## Repayment Model Fairness Audit
 
 The notebook turns fairness concepts into a model-evaluation workflow. A logistic regression predicts repayment probability while **Gender is excluded from the training formula** and retained only for the fairness audit.
 
@@ -36,7 +36,7 @@ The initial decision threshold is selected to achieve an overall true-positive r
 
 A second step explores group-specific thresholds to bring opportunity rates closer together. The resulting TPRs move to **0.65 for female applicants and 0.63 for male applicants**, but the false-positive rates move apart. This is an important engineering lesson: fairness is not a single scalar objective. Equalizing opportunity can change risk, accuracy, and other error rates, so the choice of fairness metric has to be tied to the real harm and reviewed with legal and business stakeholders.
 
-## Robert Williams: When a Model Output Becomes a Decision
+## Robert Williams Case
 
 The Robert Williams case focuses on a different type of high-stakes AI failure. A low-quality surveillance image was submitted to a facial-recognition system, which returned Williams as a candidate match. The subsequent human process did not provide an effective safeguard: the model output shaped the photo lineup, independent corroboration was weak, and Williams was arrested before the case was dropped.
 
@@ -44,7 +44,7 @@ The case highlights two layers of risk. The first is technical: performance can 
 
 For machine learning engineers, the lesson is that fairness controls cannot end at model evaluation. High-stakes systems need input-quality gates, subgroup performance reporting, clear uncertainty communication, and operational rules that require independent evidence before action is taken.
 
-## Protected Attributes: Fairness Has a Legal Context
+## Protected Attributes and Law
 
 The legal review compares protected or sensitive information across Peru, the European Union, and the United States. The exact legal frameworks differ, but the engineering concern is consistent: characteristics such as race, ethnicity, health information, sex-related information, and other protected categories require careful handling in automated decision systems.
 
