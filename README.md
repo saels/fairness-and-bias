@@ -1,6 +1,6 @@
 # Fairness and Bias in AI
 
-## Introduction to the Portfolio
+## Introduction
 
 This repository brings together a set of applied fairness studies that look at AI risk from different angles: model evaluation, lending decisions, facial recognition, protected attributes, and data bias. The common thread is that a model can be technically accurate and still create uneven or harmful outcomes.
 
@@ -12,11 +12,11 @@ The repository is organized around five use cases. Together they show how fairne
 
 | Use case | What it examines | Core takeaway |
 |---|---|---|
-| **FairBank lending case** | Fairness in automated small-loan approval, including demographic parity, opportunity parity, thresholds, and governance | A race-blind model can still produce unequal outcomes. Equal overall error rates can hide meaningful differences in who is denied credit incorrectly. |
-| **Repayment model fairness audit** | Logistic regression for repayment prediction, subgroup error analysis, and threshold-based fairness mitigation | Removing a protected attribute from training does not guarantee equal treatment. Fairness must be checked in the model's outcomes, and improving one fairness metric can worsen another. |
-| **Robert Williams case** | A wrongful arrest following a facial-recognition candidate match, poor input quality, and weak human corroboration | Model uncertainty becomes dangerous when it is treated as ground truth. Fairness failures can come from both data imbalance and the decision process around the model. |
-| **Protected attributes and law** | Sensitive and protected information, proxy variables, and differences across Peru, the EU, and the US | Fairness engineering has a legal context. Protected attributes can also be reconstructed indirectly from proxies, so simply removing a field may not remove the risk. |
-| **Representation vs. measurement bias** | The difference between who is represented in a dataset and what the dataset is actually measuring | Representation bias and measurement bias require different fixes. More data does not solve a bad proxy, and a better label does not solve an unrepresentative population. |
+| **[FairBank lending case](https://github.com/saels/fairness-and-bias/tree/53a9f95ac2f1e5cfaec12d6806497a123a631e4c/fairbank_case)** | Fairness in automated small-loan approval, including demographic parity, opportunity parity, thresholds, and governance | A race-blind model can still produce unequal outcomes. Equal overall error rates can hide meaningful differences in who is denied credit incorrectly. |
+| **[Repayment model fairness audit]()** | Logistic regression for repayment prediction, subgroup error analysis, and threshold-based fairness mitigation | Removing a protected attribute from training does not guarantee equal treatment. Fairness must be checked in the model's outcomes, and improving one fairness metric can worsen another. |
+| **[The Robert Williams case](https://github.com/saels/fairness-and-bias/blob/37d26a0b8bfa9a74c5906a1e36a0856b5728503c/The_Robert_Williams_case.md)** | A wrongful arrest following a facial-recognition candidate match, poor input quality, and weak human corroboration | Model uncertainty becomes dangerous when it is treated as ground truth. Fairness failures can come from both data imbalance and the decision process around the model. |
+| **[Protected attributes and law](https://github.com/saels/fairness-and-bias/blob/37d26a0b8bfa9a74c5906a1e36a0856b5728503c/Protected_attributes_and_law.md)** | Sensitive and protected information, proxy variables, and differences across Peru, the EU, and the US | Fairness engineering has a legal context. Protected attributes can also be reconstructed indirectly from proxies, so simply removing a field may not remove the risk. |
+| **[Representation vs. measurement bias](https://github.com/saels/fairness-and-bias/blob/37d26a0b8bfa9a74c5906a1e36a0856b5728503c/Representation_vs_Measurement_bias.md)** | The difference between who is represented in a dataset and what the dataset is actually measuring | Representation bias and measurement bias require different fixes. More data does not solve a bad proxy, and a better label does not solve an unrepresentative population. |
 
 ## FairBank Lending Case
 
@@ -36,7 +36,7 @@ The initial decision threshold is selected to achieve an overall true-positive r
 
 A second step explores group-specific thresholds to bring opportunity rates closer together. The resulting TPRs move to **0.65 for female applicants and 0.63 for male applicants**, but the false-positive rates move apart. This is an important engineering lesson: fairness is not a single scalar objective. Equalizing opportunity can change risk, accuracy, and other error rates, so the choice of fairness metric has to be tied to the real harm and reviewed with legal and business stakeholders.
 
-## Robert Williams Case
+## The Robert Williams Case
 
 The Robert Williams case focuses on a different type of high-stakes AI failure. A low-quality surveillance image was submitted to a facial-recognition system, which returned Williams as a candidate match. The subsequent human process did not provide an effective safeguard: the model output shaped the photo lineup, independent corroboration was weak, and Williams was arrested before the case was dropped.
 
